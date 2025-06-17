@@ -16,6 +16,10 @@
             <option value="">---------</option>
         </select>
     </div>
+    <div class="mb-4" hx-get="{% url 'load_options' %}" hx-target="#options-container" hx-include="[name='product']" hx-trigger="change from:#id_product">
+        <label class="font-semibold">Options</label>
+        <div id="options-container"></div>
+    </div>
     <div class="mb-4">
         {{ form.subscriber_name.label_tag }}
         {{ form.subscriber_name }}

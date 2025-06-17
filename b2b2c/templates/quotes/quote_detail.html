@@ -1,12 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Quote {{ quote.id }}{% endblock %}
+{% block title %}Quote {{ quote.quote_number }}{% endblock %}
 {% block content %}
 <h1 class="text-xl font-bold mb-4">Quote Summary</h1>
 <ul class="list-disc ml-5">
+    <li>Quote #: {{ quote.quote_number }}</li>
     <li>Product: {{ quote.product.name }}</li>
     <li>Subscriber: {{ quote.subscriber_name }}</li>
     <li>Start Date: {{ quote.start_date }}</li>
     <li>Duration: {{ quote.duration }} days</li>
+    {% if quote.options.all %}
+        <li>Options:
+            <ul class="list-disc ml-5">
+                {% for opt in quote.options.all %}
+                <li>{{ opt.name }} (+{{ opt.price }})</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
     <li class="font-semibold">Price: {{ quote.price }}</li>
 </ul>
 <a href="{% url 'new_quote' %}" class="mt-4 inline-block text-blue-600">Create another</a>
