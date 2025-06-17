@@ -1,6 +1,6 @@
 # B2B2C Experimentation
 
-This project provides a minimal Django setup demonstrating a simple quote flow inspired by B2B2C insurance platforms. It uses **Django**, **HTMX**, **AlpineJS**, and **Tailwind CSS** to keep the UI responsive with minimal JavaScript.
+This project provides a minimal Django setup demonstrating a simple quote flow inspired by B2B2C insurance platforms. It uses **Django**, **HTMX**, **AlpineJS**, and **Tailwind CSS** to keep the UI responsive with minimal JavaScript. Quotes now support optional add-ons and generate a unique quote number for tracking.
 
 ## Setup
 

@@ -1,0 +1,7 @@
+{% for option in options %}
+<div>
+    <label>
+        <input type="checkbox" name="options" value="{{ option.id }}" /> {{ option.name }} (+{{ option.price }})
+    </label>
+</div>
+{% endfor %}

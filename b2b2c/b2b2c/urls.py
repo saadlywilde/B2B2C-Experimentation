@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", quote_views.new_quote, name="new_quote"),
     path("load-products/", quote_views.load_products, name="load_products"),
+    path("load-options/", quote_views.load_options, name="load_options"),
     path("quote-price/", quote_views.quote_price, name="quote_price"),
     path("quote/<int:quote_id>/", quote_views.quote_detail, name="quote_detail"),
 ]
