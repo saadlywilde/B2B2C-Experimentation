@@ -1,0 +1,3 @@
+__pycache__/
+*.pyc
+b2b2c/db.sqlite3

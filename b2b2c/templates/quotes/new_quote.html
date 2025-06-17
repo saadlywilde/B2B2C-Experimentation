@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}New Quote{% endblock %}
+
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Create Quote</h1>
+<form method="post" hx-boost="true">
+    {% csrf_token %}
+    <div class="mb-4">
+        {{ form.branch.label_tag }}
+        {{ form.branch }}
+    </div>
+    <div class="mb-4" hx-get="{% url 'load_products' %}" hx-target="#id_product" hx-include="[name='branch']" hx-trigger="change from:#id_branch">
+        {{ form.product.label_tag }}
+        <select name="product" id="id_product" class="border p-2 rounded w-full">
+            <option value="">---------</option>
+        </select>
+    </div>
+    <div class="mb-4">
+        {{ form.subscriber_name.label_tag }}
+        {{ form.subscriber_name }}
+    </div>
+    <div class="mb-4">
+        {{ form.start_date.label_tag }}
+        {{ form.start_date }}
+    </div>
+    <div class="mb-4">
+        {{ form.duration.label_tag }}
+        {{ form.duration }}
+    </div>
+    <div class="mb-4" hx-get="{% url 'quote_price' %}" hx-trigger="keyup changed delay:500ms" hx-target="#price" hx-include="closest form">
+        <div id="price" class="font-semibold"></div>
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Quote</button>
+</form>
+{% endblock %}
